@@ -5,22 +5,16 @@
   --onSurfaceMuted: #6A6676;
 
   --primary: #3243E1;
-  /* --primary-hover: #3243E11a; */
   --primary-hover: color-mix(in srgb, var(--primary) 10%, transparent);
 
   --border: #E4E1E6;
   --outline: #C8C5CA;
 
   --table-row-hover: #dfdddd5F;
-  --table-row-selected: #eee;
-  --table-row-selected-hover: #dfddddb3;
-  --table-th-text: #5F5E62;
+  --table-header-text: #5F5E62;
 
   --button-overlay: #ffffff1A;
-  /* --checkbox-hover: #3243E129; */
-  --checkbox-hover: color-mix(in srgb, var(--primary) 16%, transparent);
-
-  --radius: 8px;
+  --border-radius: 8px;
 }
 
 * {
@@ -45,18 +39,6 @@ button, input, select, textarea {
 
 [hidden] {
   display: none !important;
-}
-
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
 }
 
 .page__section {
@@ -93,7 +75,7 @@ button, input, select, textarea {
 /* BUTTONS */
 .btn {
   border: none;
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   cursor: pointer;
   color: var(--primary);
   font-size: 12px;
@@ -137,7 +119,7 @@ button, input, select, textarea {
 
 .btn--contained .btn__overlay {
   background: transparent;
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   inset: 0;
   pointer-events: none;
   position: absolute;
@@ -162,10 +144,10 @@ button, input, select, textarea {
 /* TABLE */
 .table-container {
   background: var(--surface);
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   max-width: 100%;
   overflow-x: auto;
-  padding-top: 8px;
+  padding: 4px 0 0 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -184,7 +166,7 @@ button, input, select, textarea {
 }
 
 .table th {
-  color: var(--table-th-text);
+  color: var(--table-header-text);
   font-weight: 500;
   font-size: 12px;
 }
@@ -216,73 +198,10 @@ button, input, select, textarea {
   text-align: right;
 }
 
-
-/* checkbox column */
-.table .col-select {
-  max-width: 36px;
-  text-align: center;
-  padding: 0;
-  width: 36px;
-}
-
-.checkbox-mdi {
-  align-items: center;
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-  line-height: 1;
-}
-
-.checkbox-mdi__icon {
-  border-radius: 100%;
-  color: var(--onSurface); 
-  font-size: 18px;
-  padding: 6px;
-}
-
-.checkbox-mdi__icon:hover {
-  background: var(--checkbox-hover);
-}
-
-.checkbox-mdi__icon--checked {
-  display: none;
-}
-
-.checkbox-mdi input:checked ~ .mdi-checkbox-blank-outline {
-  display: none;
-}
-
-.checkbox-mdi input:checked ~ .checkbox-mdi__icon--checked {
-  color: var(--primary);
-  display: inline-block;
-}
-
-.checkbox-mdi--select-all .checkbox-mdi__icon--partial {
-  display: none;
-}
-
-.checkbox-mdi--select-all input:indeterminate ~ .mdi-checkbox-blank-outline {
-  display: none;
-}
-
-.checkbox-mdi--select-all input:indeterminate ~ .checkbox-mdi__icon--partial {
-  color: var(--primary);
-  display: inline-block;
-}
-
-.checkbox-mdi--select-all input:indeterminate ~ .checkbox-mdi__icon--checked {
-  display: none !important;
-}
-
-.checkbox-mdi--select-all input:checked:not(:indeterminate) ~ .checkbox-mdi__icon--partial {
-  display: none !important;
-}
-
-
 /* FORM CONTROL (LABEL + TEXT INPUT) */
 .surface-container {
   background: var(--surface);
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   padding: 14px 16px;
 }
 
@@ -299,7 +218,7 @@ button, input, select, textarea {
 
 .form_control__input {
   border: 1px solid var(--outline);
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   color: var(--onSurface);
   font-size: 14px;
   max-width: 280px;
@@ -315,4 +234,31 @@ button, input, select, textarea {
 .form_control__input:focus {
   border-color: var(--primary);
   outline: 1px solid var(--primary);
+}
+
+.header__logo {
+  align-items: center;
+  display: -moz-box;
+  display: flex;
+  gap: 16px;
+  height: 30px;
+  text-decoration: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -moz-box-align: center;
+}
+
+.header__logo svg {
+  display: block;
+  height: 30px;
+  width: 30px;
+}
+
+.header__logo strong {
+  color: #0b2541;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
 }
