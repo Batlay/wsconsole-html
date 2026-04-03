@@ -32,14 +32,14 @@
         </div>
         <div class="login-container__card-form-group">
           <div class="form_control">
-            <label class="form_control__label">Email</label>
-            <input id="query" name="query" class="form_control__input form_control__input--login" type="text"
-              placeholder="Enter email..." />
+            <label class="form_control__label" for="login-email">Email</label>
+            <input id="login-email" name="email" class="form_control__input form_control__input--login" type="email"
+              autocomplete="email" inputmode="email" placeholder="Email" />
           </div>
           <div class="form_control">
-            <label class="form_control__label">Password</label>
-            <input id="query" name="query" class="form_control__input form_control__input--login" type="text"
-              placeholder="Password" />
+            <label class="form_control__label" for="login-password">Password</label>
+            <input id="login-password" name="password" class="form_control__input form_control__input--login"
+              type="password" autocomplete="current-password" placeholder="Enter password" />
           </div>
         </div>
         <button id="btn-installation" class="btn btn--contained btn--login" type="button">
