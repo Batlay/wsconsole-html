@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Шаблон таблицы</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div>
+      <h1 class="header__title">Butlerapp</h1>
+    </div>
+
+    <div class="action-menu">
+      <button class="btn btn--icon" type="button">
+        <span class="btn__icon mdi mdi-import" aria-hidden="true"></span>
+        <span class="btn__text">Import</span>
+      </button>
+      <button class="btn btn--icon" type="button">
+        <span class="btn__icon mdi mdi-update" aria-hidden="true"></span>
+        <span class="btn__text">Reset button</span>
+      </button>
+      <button id="btn-installation" class="btn btn--icon btn--contained" type="button">
+        <span class="btn__icon mdi mdi-plus" aria-hidden="true"></span>
+        <span class="btn__text">Collect table rows data</span>
+        <div class="btn__overlay"></div>
+      </button>
+    </div>
+  </header>
+
+  <!-- TABLE -->
+  <section class="page__section">
+    <section class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="col-select" scope="col">
+              <label class="checkbox-mdi checkbox-mdi--select-all">
+                <input id="select-all" class="sr-only" type="checkbox" />
+                <span class="checkbox-mdi__icon mdi mdi-checkbox-blank-outline" aria-hidden="true"></span>
+                <span class="checkbox-mdi__icon mdi mdi-minus-box checkbox-mdi__icon--partial"
+                  aria-hidden="true"></span>
+                <span class="checkbox-mdi__icon mdi mdi-checkbox-marked checkbox-mdi__icon--checked"
+                  aria-hidden="true"></span>
+              </label>
+            </th>
+            <th scope="col" class="col-id"><span>#</span></th>
+            <th scope="col"><span>Name</span></th>
+            <th scope="col"><span>Status</span></th>
+            <th scope="col" class="col-actions"><span>Actions</span></th>
+          </tr>
+        </thead>
+        <tbody id="installations-table-body">
+          <td class="col-select">
+            <label class="checkbox-mdi">
+              <input class="sr-only row-checkbox" type="checkbox" id="row-select-1" />
+              <span class="checkbox-mdi__icon mdi mdi-checkbox-blank-outline" aria-hidden="true"></span>
+              <span class="checkbox-mdi__icon mdi mdi-checkbox-marked checkbox-mdi__icon--checked"
+                aria-hidden="true"></span>
+            </label>
+          </td>
+          <td>1</td>
+          <td class="col-name">Buissness 1</td>
+          <td><span>Active</span></td>
+          <td class="col-actions">
+            <button class="btn btn--table btn--icon btn--contained" type="button">
+              <span class="btn__icon mdi mdi-plus" aria-hidden="true"></span>
+              <span class="btn__text">Open installation</span>
+              <div class="btn__overlay"></div>
+            </button>
+          </td>
+          </tr>
+          <tr>
+            <td class="col-select">
+              <label class="checkbox-mdi">
+                <input class="sr-only row-checkbox" type="checkbox" id="row-select-2" />
+                <span class="checkbox-mdi__icon mdi mdi-checkbox-blank-outline" aria-hidden="true"></span>
+                <span class="checkbox-mdi__icon mdi mdi-checkbox-marked checkbox-mdi__icon--checked"
+                  aria-hidden="true"></span>
+              </label>
+            </td>
+            <td>2</td>
+            <td class="col-name">Buissness 2</td>
+            <td><span>Waiting</span></td>
+            <td class="col-actions">
+              <button class="btn btn--table btn--icon btn--contained" type="button">
+                <span class="btn__icon mdi mdi-plus" aria-hidden="true"></span>
+                <span class="btn__text">Open installation</span>
+                <div class="btn__overlay"></div>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="col-select">
+              <label class="checkbox-mdi">
+                <input class="sr-only row-checkbox" type="checkbox" id="row-select-3" />
+                <span class="checkbox-mdi__icon mdi mdi-checkbox-blank-outline" aria-hidden="true"></span>
+                <span class="checkbox-mdi__icon mdi mdi-checkbox-marked checkbox-mdi__icon--checked"
+                  aria-hidden="true"></span>
+              </label>
+            </td>
+            <td>3</td>
+            <td class="col-name">Buissness 3</td>
+            <td><span>Not deployed yet</span></td>
+            <td class="col-actions">
+              <button class="btn btn--table btn--icon btn--contained" type="button">
+                <span class="btn__icon mdi mdi-plus" aria-hidden="true"></span>
+                <span class="btn__text">Open installation</span>
+                <div class="btn__overlay"></div>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- CONTROLS -->
+    <section class="surface-container">
+      <!-- ACTION MENU (SAVE BUTTONS) -->
+      <div class="action-menu">
+        <button id="save-btn-disabled" class="btn btn--icon btn--disabled" type="button" disabled>
+          <span class="btn__icon mdi mdi-content-save-off" aria-hidden="true"></span>
+          <span class="btn__text">Save</span>
+        </button>
+        <button id="save-btn-contained" class="btn btn--icon btn--contained" type="button" hidden>
+          <span class="btn__icon mdi mdi-content-save" aria-hidden="true"></span>
+          <span class="btn__text">Save</span>
+          <div class="btn__overlay"></div>
+        </button>
+      </div>
+
+      <!-- FORM CONTROL -->
+      <div class="form_control">
+        <label class="form_control__label">Installation name</label>
+        <input id="query" name="query" class="form_control__input" type="text"
+          placeholder="Enter installation name..." />
+      </div>
+    </section>
+  </section>
+  <script src="./controls.js" defer></script>
+
+</body>
+
+</html>
